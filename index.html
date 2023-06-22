@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BATCH-1 LECTURE-68 CREATE A WEBPAGE USING PURE JS</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <style>
+
+        </style>
+        <script src="./js/script.js"></script>
+        <script>
+
+        </script>
+    </head>
+    <body>
+        
+
+
+        <script>
+            var h = document.createElement('header');
+            // Add class and selector
+            h.setAttribute('class','k_header')
+            var m = document.createElement('div');
+            var f = document.createElement('footer')
+
+            h.innerHTML = 'Header';
+
+            console.log(h);
+            console.log(m);
+            console.log(f);
+
+            document.body.appendChild(h);
+            document.body.appendChild(m);
+
+            document.querySelector('header.k_header ~ div').setAttribute('class','k_main')
+
+            var  x = document.getElementsByClassName('k_main');
+            console.log(x[0]);
+            x[0].style.color='red';
+            // It will return the collection [] Array
+
+            document.body.appendChild(f);
+            
+            document.querySelector('div').innerHTML = "Main Area";
+
+            var fe = document.querySelector('div ~ footer');
+            fe.innerHTML ="Footer"; // fe.appendChild();
+
+            // Create a button
+            var b = document.createElement('button');
+            b.innerHTML = 'Click Me!'
+            console.log(b);
+
+            fe.appendChild(b);
+            var be = document.getElementsByTagName('button');
+            console.log(be[0]);
+
+            /*element.addEventListener(event, function, useCapture)*/
+
+            be[0].addEventListener('click', function(){ //Anonymous Function
+                alert('You Clicked Me!');
+                h.style.color = 'green';
+            });
+            
+
+
+        </script>
+    </body>
+</html>
